@@ -1,13 +1,11 @@
 import * as types from "./actionTypes";
 
-const initialCount = 0;
-export function countReducer(count = initialCount, action) {
+const initialCharacters = [];
+export function charactersReducer(todos = initialCharacters, action) {
   switch (action.type) {
-    case types.INCREASE:
-      return count + 1;
-    case types.DECREASE:
-      return count - 1;
+    case types.SET_CHARACTERS:
+      return action.payload;
     default:
-      return count;
+      return todos;
   }
 }

@@ -2,12 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import { combineReducers, createStore, compose, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
-import { countReducer } from "./state/reducers";
-import Counter from "./components/Counter";
+import { charactersReducer } from "./state/reducers";
 import Header from "./components/Header";
+import Characters from "./components/Characters";
 
 const monsterReducer = combineReducers({
-  count: countReducer
+  characters: charactersReducer,
 });
 
 export const store = createStore(
@@ -23,7 +23,7 @@ export function App() {
   return (
     <Container>
       <Header />
-      <Counter />
+      <Characters />
     </Container>
   );
 }
